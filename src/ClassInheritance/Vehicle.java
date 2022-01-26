@@ -2,17 +2,23 @@ package ClassInheritance;
 
 public class Vehicle {
 
-    double Speed;
+    double speed;
+    boolean moving = false;
 
-    public void go() {
+      void drive() {
 
-        System.out.print("You begin to move forward.");
+        System.out.println("You begin to move forward.");
+        moving = true;
+        speed = 5.0;
+
 
     }
 
-    public void stop() {
+     void stop() {
 
-        System.out.print("You come to a stop.");
+        System.out.println("You come to a stop.");
+        speed = 0.0;
+        moving = false;
 
     }
 

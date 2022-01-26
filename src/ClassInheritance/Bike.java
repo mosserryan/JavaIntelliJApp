@@ -1,5 +1,7 @@
 package ClassInheritance;
 
-public class Bike {
+public class Bike extends Vehicle {
+
+    int wheels = 2;
 
 }
