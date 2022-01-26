@@ -1,4 +1,4 @@
-package com.company;
+package InsertObjects;
 
 public class Garage {
 
