@@ -36,8 +36,6 @@ public class Garage {
                 System.out.println("Spot " + spot + " is empty.");
             }
 
-
-
         }
 
     }
