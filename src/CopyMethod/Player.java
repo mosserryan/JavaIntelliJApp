@@ -14,6 +14,10 @@ public class Player {
 
     }
 
+    Player(Player targetPlayer) {
+        copyPlayer(targetPlayer);
+    }
+
     String getName() {
         return this.name;
     }
@@ -36,6 +40,12 @@ public class Player {
 
     String playerStats () {
         return "Name: " + getName() + "\n" + "Level: " + getLevel() + "\n" + "Health Points: " + getHealthPoints();
+    }
+
+    public void copyPlayer(Player targetPlayer) {
+         this.setName(targetPlayer.getName());
+         this.setLevel(targetPlayer.getLevel());
+         this.setHealthPoints(targetPlayer.getHealthPoints());
     }
 
 }
