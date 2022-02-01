@@ -10,9 +10,11 @@ public class Main {
 
         Rabbit rabbit = new Rabbit();
         rabbit.flee();
+        rabbit.jump();
 
         Hawk hawk = new Hawk();
         hawk.attack();
+        hawk.eatPrey();
 
         Human human = new Human();
         human.flee();
