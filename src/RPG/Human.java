@@ -1,19 +1,19 @@
 package RPG;
 
-public class HumanPlayer extends Player{
+public class Human extends Player{
 
     String race;
 
-    HumanPlayer(String name, int healthPoints, int stamina, int mana, int strength, int intelligence, int dexterity) {
+    Human(String name, int healthPoints, int stamina, int mana, int strength, int intelligence, int dexterity, String race) {
         super(name, healthPoints, stamina, mana, strength, intelligence, dexterity);
 
-        this.name = name;
-        this.healthPoints = healthPoints + 10;
-        this.stamina = stamina;
-        this.mana = mana + 10;
-        this.strengthLevel = strength;
-        this.intelligenceLevel = intelligenceLevel + 5;
-        this.dexterityLevel = dexterity;
+        this.name = this.name;
+        this.healthPoints = this.healthPoints;
+        this.stamina = this.stamina;
+        this.mana = 10;
+        this.strengthLevel = 0;
+        this.intelligenceLevel = 5;
+        this.dexterityLevel = 0;
         this.race = "Human";
 
     }
