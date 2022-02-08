@@ -18,8 +18,12 @@ public class Main {
 //        ImageIcon image = new ImageIcon("chair_logo.png");
 //        frame.setIconImage(image.getImage());
 //        frame.getContentPane().setBackground(new Color(255,0,255));
+//
+//        JLabel label = new JLabel(); // create new label
+//        label.setText("I am a chair"); // set the text of the label
+//        frame.add(label);
 
-        ChairFrame chairFrame = new ChairFrame();
+         ChairFrame chairFrame = new ChairFrame();
 
     }
 
