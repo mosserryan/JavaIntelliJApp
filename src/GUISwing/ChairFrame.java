@@ -10,7 +10,23 @@ public class ChairFrame extends JFrame{
 
         ImageIcon image = new ImageIcon("chair_logo.png"); // Create the image icon that has been copied into the project.
         this.setIconImage(image.getImage()); // Set the icon of our frame to this newly create image.
-        Border border = BorderFactory.createLineBorder(Color.green, 5); // Creates a border to use in our label
+        Border border = BorderFactory.createLineBorder(Color.black, 5); // Creates a border to use in our label
+
+        // Panels
+        JPanel bluePanel = new JPanel();
+        JPanel redPanel = new JPanel();
+        JPanel greenPanel = new JPanel();
+        JPanel yellowPanel = new JPanel();
+        bluePanel.setBackground(Color.blue);
+        bluePanel.setBounds(0,0,250,250);
+        redPanel.setBackground(Color.red);
+        redPanel.setBounds(250,0,250,250);
+        greenPanel.setBackground(Color.green);
+        greenPanel.setBounds(0,250,250,250);
+        yellowPanel.setBackground(Color.yellow);
+        yellowPanel.setBounds(250,250,250,250);
+
+
 
         // Labels
         JLabel label = new JLabel(); // create new label
@@ -30,9 +46,13 @@ public class ChairFrame extends JFrame{
 
         // JFrame
         this.add(label); // Adds label to frame
+        this.add(bluePanel);
+        this.add(redPanel);
+        this.add(greenPanel);
+        this.add(yellowPanel);
 
         this.setTitle("Chairforce"); // Set the title
-        this.setSize(500,500); // Set starting width and height of the this.
+        this.setSize(515,539); // Set starting width and height of the this.
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //One of the option, this allows you to exit program once clicking "X"
         this.setResizable(true); // Prevents use from changing the size of the this.
