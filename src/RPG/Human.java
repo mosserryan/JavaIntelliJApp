@@ -22,5 +22,15 @@ public class Human extends Player{
         return "Name: " + this.name + "\n" + "Health: " + this.healthPoints + "\n" + "Stamina: " + this.stamina + "\n" + "Mana: " + this.mana + "\n" + "Strength: " + this.strengthLevel + "\n" + "Intelligence: " + this.intelligenceLevel + "\n" + "Dexterity: " + this.dexterityLevel + "\n" + "Race: " + this.race;
     }
 
+    public void updateStats () {
+        this.name = this.name;
+        this.healthPoints = this.healthPoints;
+        this.stamina = this.stamina;
+        this.mana = 10;
+        this.strengthLevel = 0;
+        this.intelligenceLevel = 5;
+        this.dexterityLevel = 0;
+        this.race = "Human";
+    }
 
 }
