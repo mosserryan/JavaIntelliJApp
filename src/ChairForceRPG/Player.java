@@ -7,38 +7,45 @@ import javax.swing.*;
 public class Player {
 
     private String name;
-    private int healthPoints = 100;
-    private int stamina = 100;
-    private int mana = 100;
-    private int level = 1;
+    private int healthPoints;
+    private int stamina;
+    private int mana;
+    private int level;
     private String playerClass;
     private String race;
 
     Player(String name) {
 
-        this.name = name;
-//        int healthPoints = this.healthPoints;
-//        int energy = this.energy;
-//        int level = this.level;
-//        String playerClass;
-//        String race;
+        // this.name = name;
+        setName(name);
+        setHealthPoints(100);
+        setStamina(100);
+        setMana(100);
+        setLevel(1);
+
 
     }
 
     public String toString() {
-        return "Name: " + this.name + "\n" + "Health: " + this.healthPoints + "\n" + "Stamina: " + this.stamina + "\n" + "Mana: " + this.mana + "\n" + "Level: " + this.level + "\n" + "Race: " + this.race + "\n" + "class: " + this.playerClass;
+        return "Name: " + this.name
+                + "\n" + "Health: " + this.healthPoints
+                + "\n" + "Stamina: " + this.stamina
+                + "\n" + "Mana: " + this.mana
+                + "\n" + "Level: " + this.level
+                + "\n" + "Race: " + this.race
+                + "\n" + "class: " + this.playerClass;
     }
 
     public void createCharacter() {
 
         chooseRace();
-        System.out.println(this);
+         System.out.println(this);
         chooseClass();
-        System.out.println(this);
+         System.out.println(this);
 
     }
 
-    public void chooseRace() {
+    private void chooseRace() {
 
         String characterRace = JOptionPane.showInputDialog("Enter your character's race. [Human or Orc]");
 
@@ -54,29 +61,30 @@ public class Player {
 
         if (characterRace.equalsIgnoreCase("human")) {
 
-            this.healthPoints = this.healthPoints + 10;
-            this.stamina = this.stamina + 10;
-            this.mana = this.mana + 10;
+            setHealthPoints(10);
+            setStamina(10);
+            setMana(10);
             this.race = characterRace;
 
         } else if (characterRace.equalsIgnoreCase("orc")) {
 
-            this.healthPoints = this.healthPoints + 10;
-            this.stamina = this.stamina + 15;
-            this.mana = this.mana + 5;
+            setHealthPoints(10);
+            setStamina(15);
+            setMana(5);
             this.race = characterRace;
 
         }
 
     }
 
-    public void chooseClass() {
+    private void chooseClass() {
 
         String characterClass = JOptionPane.showInputDialog("Enter your character's class. [Warrior, Hunter, or Wizard]");
 
         while (!characterClass.equalsIgnoreCase("warrior")
                 && !characterClass.equalsIgnoreCase("hunter")
-                && !characterClass.equalsIgnoreCase("wizard")) {
+                && !characterClass.equalsIgnoreCase("wizard")
+                && !characterClass.equalsIgnoreCase("melvin")) {
 
             characterClass = JOptionPane.showInputDialog("You chose " + characterClass
                     + ". You did not choose one of the three options! Enter your character's class. "
@@ -87,22 +95,95 @@ public class Player {
         characterClass = characterClass.substring(0, 1).toUpperCase() + characterClass.substring(1); // Capitalize first letter of string, just in case user doesn't.
 
         if(characterClass.equalsIgnoreCase("warrior")) {
-            this.healthPoints = this.healthPoints + 30;
-            this.stamina = this.stamina + 15;
-            this.mana = this.mana + 5;
+
+            setHealthPoints(30);
+            setStamina(15);
+            setMana(5);
             this.playerClass = characterClass;
+
         } else if (characterClass.equalsIgnoreCase("hunter")) {
-            this.healthPoints = this.healthPoints + 20;
-            this.stamina = this.stamina + 20;
-            this.mana = this.mana + 10;
+
+            setHealthPoints(20);
+            setStamina(20);
+            setMana(10);
             this.playerClass = characterClass;
+
         } else if (characterClass.equalsIgnoreCase("wizard")) {
-            this.healthPoints = this.healthPoints + 10;
-            this.stamina = this.stamina + 10;
-            this.mana = this.mana + 30;
+
+            setHealthPoints(10);
+            setStamina(10);
+            setMana(30);
             this.playerClass = characterClass;
+
+        } else if (characterClass.equalsIgnoreCase("melvin")) {
+
+            setHealthPoints(-10);
+            setStamina(-20);
+            setMana(-100);
+            this.playerClass = characterClass;
+
         }
 
     }
+
+    private String getName() {
+        return this.name;
+    }
+
+    private int getHealthPoints() {
+        return this.healthPoints;
+    }
+
+    private int getStamina() {
+        return this.stamina;
+    }
+
+    private int getMana() {
+        return this.mana;
+    }
+
+    private int getLevel() {
+        return this.level;
+    }
+
+    private void setName(String name) {
+        this.name = name;
+    }
+
+    private void setHealthPoints(int number) {
+
+       this.healthPoints = getHealthPoints() + number;
+
+    }
+
+    private void setStamina(int number) {
+
+        this.stamina = getStamina() + number;
+
+    }
+
+    private void setMana(int number) {
+
+        this.mana = getMana() + number;
+
+    }
+
+    public void setLevel(int number) {
+
+        this.level = getLevel() + number;
+
+    }
+
+    public void attack() {
+
+        System.out.println(this.name + " attacks with their sword.");
+
+    }
+
+    public void rest() {
+        System.out.println(this.name + " skips this turn to rest.");
+    }
+
+
 
 }
