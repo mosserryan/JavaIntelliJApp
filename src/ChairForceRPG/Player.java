@@ -12,6 +12,7 @@ public class Player {
     private String playerClass;
     private String race;
 
+
     Player(String name) {
 
         setName(name);
@@ -21,6 +22,13 @@ public class Player {
         setLevel(1);
 
     }
+
+    public String toString() {
+        return "Name: " + this.name + "\n" + "Health: " + this.healthPoints + "\n" + "Stamina: " + this.stamina + "\n" + "Mana: " + this.mana + "\n" + "Level: " + this.level + "\n" + "Class: " + this.playerClass + "\n" + "Race: " + this.race;
+    }
+
+
+
 
     // Start character creation
 
@@ -66,6 +74,8 @@ public class Player {
         }
 
     }
+
+
 
     private void chooseClass() {
 
@@ -178,5 +188,5 @@ public class Player {
     private void rest() {
         System.out.println(this.name + " skips this turn to rest.");
     }
-
 }
+
