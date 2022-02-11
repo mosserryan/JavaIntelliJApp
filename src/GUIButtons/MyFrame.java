@@ -7,98 +7,165 @@ import java.awt.event.ActionListener;
 
 public class MyFrame extends JFrame implements ActionListener {
 
-    JButton attackButton;
-    JButton healButton;
-    JButton shieldButton;
+    JButton attackButtonP1;
+    JButton healButtonP1;
+    JButton shieldButtonP1;
+    JButton attackButtonP2;
+    JButton healButtonP2;
+    JButton shieldButtonP2;
 
-    JProgressBar playerOneHP = new JProgressBar();
-    JProgressBar playerTwoHP = new JProgressBar();
+    JProgressBar healthPointsP1 = new JProgressBar();
+    JProgressBar healthPointsP2 = new JProgressBar();
 
     MyFrame() {
 
-        ImageIcon swordIcon = new ImageIcon("sword.png");
-        swordIcon.setImage(swordIcon.getImage().getScaledInstance(125, 125, Image.SCALE_DEFAULT));
-
-        ImageIcon healingIcon = new ImageIcon("redPotion.png");
-        healingIcon.setImage(healingIcon.getImage().getScaledInstance(125, 125, Image.SCALE_DEFAULT));
-
-        ImageIcon shieldIcon = new ImageIcon("shield.png");
-        shieldIcon.setImage(shieldIcon.getImage().getScaledInstance(125, 125, Image.SCALE_DEFAULT));
-
-
-        attackButton = new JButton();
-        attackButton.setBounds(400,200, 200, 150);
-        attackButton.addActionListener(this);
-        attackButton.setFocusable(false);
-        attackButton.setIcon(swordIcon);
-
-        healButton = new JButton();
-        healButton.setBounds(700,200, 200, 150);
-        healButton.addActionListener(this);
-        healButton.setFocusable(false);
-        healButton.setIcon(healingIcon);
-
-        shieldButton = new JButton();
-        shieldButton.setBounds(100,200, 200, 150);
-        shieldButton.addActionListener(this);
-        shieldButton.setFocusable(false);
-        shieldButton.setIcon(shieldIcon);
-
-        playerOneHP.setValue(100);
-        playerOneHP.setForeground(Color.red);
-        playerOneHP.setBounds(100,50,400,50);
-        playerOneHP.setStringPainted(true);
-        playerOneHP.setString("100/100");
-        playerOneHP.setForeground(Color.red);
-        playerOneHP.setBackground(Color.black);
+        playerOne();
+        playerTwo();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setSize(1000,1000);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(screenSize.width, screenSize.height);
         this.setVisible(true);
-        this.add(attackButton);
-        this.add(playerOneHP);
-        this.add(healButton);
-        this.add(shieldButton);
-
-
+        this.add(attackButtonP1);
+        this.add(healthPointsP1);
+        this.add(healButtonP1);
+        this.add(shieldButtonP1);
+        this.add(attackButtonP2);
+        this.add(healthPointsP2);
+        this.add(healButtonP2);
+        this.add(shieldButtonP2);
+        this.add(healthPointsP2);
 
     }
+
+    private void playerOne () {
+        ImageIcon swordIcon = new ImageIcon("sword.png");
+        swordIcon.setImage(swordIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+        ImageIcon healingIcon = new ImageIcon("redPotion.png");
+        healingIcon.setImage(healingIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+        ImageIcon shieldIcon = new ImageIcon("shield.png");
+        shieldIcon.setImage(shieldIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+
+        attackButtonP1 = new JButton();
+        attackButtonP1.setBounds(100,200, 125, 125);
+        attackButtonP1.addActionListener(this);
+        attackButtonP1.setFocusable(false);
+        attackButtonP1.setIcon(swordIcon);
+
+        healButtonP1 = new JButton();
+        healButtonP1.setBounds(500,200, 125, 125);
+        healButtonP1.addActionListener(this);
+        healButtonP1.setFocusable(false);
+        healButtonP1.setIcon(healingIcon);
+
+        shieldButtonP1 = new JButton();
+        shieldButtonP1.setBounds(300,200, 125, 125);
+        shieldButtonP1.addActionListener(this);
+        shieldButtonP1.setFocusable(false);
+        shieldButtonP1.setIcon(shieldIcon);
+
+        healthPointsP1.setValue(100); // Variable
+        healthPointsP1.setBounds(100,50,525,50);
+        healthPointsP1.setStringPainted(true);
+        healthPointsP1.setString(healthPointsP1.getValue() + "/" + healthPointsP1.getMaximum()); // variable dependent
+        healthPointsP1.setForeground(Color.red);
+        healthPointsP1.setBackground(Color.black);
+
+    }
+
+    private void playerTwo () {
+
+        ImageIcon swordIcon = new ImageIcon("sword.png");
+        swordIcon.setImage(swordIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+        ImageIcon healingIcon = new ImageIcon("redPotion.png");
+        healingIcon.setImage(healingIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+        ImageIcon shieldIcon = new ImageIcon("shield.png");
+        shieldIcon.setImage(shieldIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+
+        attackButtonP2 = new JButton();
+        attackButtonP2.setBounds(1270,200, 125, 125);
+        attackButtonP2.addActionListener(this);
+        attackButtonP2.setFocusable(false);
+        attackButtonP2.setIcon(swordIcon);
+
+        healButtonP2 = new JButton();
+        healButtonP2.setBounds(1670,200, 125, 125);
+        healButtonP2.addActionListener(this);
+        healButtonP2.setFocusable(false);
+        healButtonP2.setIcon(healingIcon);
+
+        shieldButtonP2 = new JButton();
+        shieldButtonP2.setBounds(1470,200, 125, 125);
+        shieldButtonP2.addActionListener(this);
+        shieldButtonP2.setFocusable(false);
+        shieldButtonP2.setIcon(shieldIcon);
+
+        healthPointsP2.setValue(100); // variable dependent
+        healthPointsP2.setBounds(1270,50,525,50);
+        healthPointsP2.setStringPainted(true);
+        healthPointsP2.setString(healthPointsP2.getValue() + "/" + healthPointsP2.getMaximum()); // variable dependent
+        healthPointsP2.setForeground(Color.red);
+        healthPointsP2.setBackground(Color.black);
+
+    }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == attackButton) {
+        if(e.getSource() == attackButtonP1) {
             System.out.println("You attack your target and deal 10 damage!");
-            //this.setSize(700,700);
 
-            if(playerOneHP.getValue() > 0) {
-                playerOneHP.setValue(playerOneHP.getValue() - 10);
-                playerOneHP.setString(playerOneHP.getValue() + "/100");
+            if(healthPointsP2.getValue() > 0) {
+                healthPointsP2.setValue(healthPointsP2.getValue() - 10); // variable dependent
+                healthPointsP2.setString(healthPointsP2.getValue() + "/" + healthPointsP2.getMaximum());
             }
 
-            if(playerOneHP.getValue() < 1) {
-                attackButton.setEnabled(false);
+            if(healthPointsP2.getValue() <= 0) {
+                attackButtonP1.setEnabled(false);
             }
 
         }
 
-        if(e.getSource() == healButton) {
-            System.out.println("You have healed 30 points of damage!");
-            //this.setSize(700,700);
+        if(e.getSource() == attackButtonP2) {
+            System.out.println("You attack your target and deal 10 damage!");
 
-            if(playerOneHP.getValue() < 100) {
-                playerOneHP.setValue(playerOneHP.getValue() + 30); // Change 30 to a passed in value.
-            } else {
-                playerOneHP.setValue(100);
-                }
-
-
-            if(playerOneHP.getValue() == 100) {
-                healButton.setEnabled(false);
+            if(healthPointsP1.getValue() > 0) {
+                healthPointsP1.setValue(healthPointsP1.getValue() - 10); // variable dependent
+                healthPointsP1.setString(healthPointsP1.getValue() + "/" + healthPointsP1.getMaximum());
             }
 
-            playerOneHP.setString(playerOneHP.getValue() + "/100");
+            if(healthPointsP1.getValue() <= 0) {
+                attackButtonP2.setEnabled(false);
+            }
+
+        }
+
+        if(e.getSource() == healButtonP1) {
+
+            if(healthPointsP1.getValue() < healthPointsP1.getMaximum()) {
+                healthPointsP1.setValue(healthPointsP1.getValue() + 30); // Change 30 to a passed in value.
+                System.out.println("You have healed 30 points of damage!");
+            } else {
+                System.out.println("You are already full health.");
+            }
+
+            healthPointsP1.setString(healthPointsP1.getValue() + "/" + healthPointsP2.getMaximum());
+
+            }
+
+        if(e.getSource() == healButtonP2) {
+
+            if(healthPointsP2.getValue() < healthPointsP2.getMaximum()) {
+                healthPointsP2.setValue(healthPointsP2.getValue() + 30); // Change 30 to a passed in value.
+                System.out.println("You have healed 30 points of damage!");
+            } else {
+                System.out.println("You are already full health.");
+            }
+
+            healthPointsP2.setString(healthPointsP2.getValue() + "/" + healthPointsP2.getMaximum());
 
             }
         }
